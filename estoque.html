@@ -1,0 +1,34 @@
+<html>
+  <script>
+    terminar = 'n'
+    saldo = parseInt(prompt('Digite o saldo inicial: '))
+
+    document.writeln(`Saldo inicial: ${saldo}<br>`)
+
+    while (terminar == 'n') {
+      tipo_entrada = parseInt(
+        prompt('Selecione a operação(1-Entrada; 2-Saida): ')
+      )
+      qnt = parseInt(prompt('Quantidade: '))
+
+      if (tipo_entrada == 1) {
+        saldo += qnt
+        document.writeln(`Entrada: ${qnt}<br>`)
+      } else if (tipo_entrada == 2) {
+        if (saldo >= qnt) {
+          saldo -= qnt
+          document.writeln(`Saida: ${qnt}<br>`)
+        } else {
+          document.writeln(`Saldo insuficiente<br>`)
+        }
+      }
+
+      document.writeln(`Saldo atual: ${saldo}<br>`)
+      document.writeln(`-------------------------------------------------------------------------------------<br>`)
+
+      terminar = prompt('Terminar? (s/n): ')
+    }
+
+    document.writeln(`Fim do programa!<br>`)
+  </script>
+</html>
